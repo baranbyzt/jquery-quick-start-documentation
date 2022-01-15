@@ -21,54 +21,54 @@ In the topic of our 1st part, we will talk about selectors, which are
  n important structure for jquery.
 */
 
-// buradaki fonksiyonumuz sayfadaki bütün resim,link,api... yüklendikten sonra
-// buradaki kodların çalıştırılacağını böylece olası sorunları önlemek için kullanılır.
+// our function here is after all the images, links, api... on the page are loaded
+// is used to run the codes here, thus avoiding potential problems.
 $(document).ready(function(){
 
-    // burada tag selector kullandık. 
-    // sayfadaki bütün p tagları için işlem yapmamızı sağlar.
+    // we used tag selector here.
+    // Allows us to process all p tags on the page.
 $('p').css('color','blue');
-// burada seçmek istediğimiz öğenin id değerine göre seçtik
+// we selected here according to the id value of the item we want to select
 $('#tag_id_p').css('color',"yellow");
-// burada seçmek istediğimiz öğenin class değerine göre seçtik
+// we have selected here according to the class value of the item we want to select
 $('.tag_class_p').css('color',"red");
 
 
-// :first --> bu belirtilen elemanların ilk kayıt getirir.
+// :first --> it returns the first record of the specified elements.
 $("li:first").css('background-color',"blue");
 
-// :last --> bu belirtilen elemanların son kayıt getirir.
+// :last --> it fetches the last record of the specified elements.
 $("li:last").css('background-color',"red");
 
-// burada belirtilen ebebeyin öğenin içindekilerden ilk çocuğu hedef alır.
+// targets the first child from the contents of the parent element specified here.
 $('.main_ul li:first-child').css('color',"white");
 
-// burada belirtilen ebebeyin öğenin içindekilerden son çocuğu hedef alır.
+// targets the last child of the item's contents of the parent specified here.
 $('.main_ul li:last-child').css('color',"yellow");
 
-// find() --> burada belirtilen elemanın altındaki id,class,tag... her ne ise 
-// onu bulmamıza ve üzerinde işlem yapmamızı sağlar. 
+// find() --> id,class,tag... whatever under the element specified here
+// allows us to find it and act on it.
 $('.main_ul').find(".middle_li").css("background-color","green");
 
 
-//eq() --> burada belirtilen öğenin id,class,tag... her ne ise onunla
-// aynı değere sahip elemanların hepsinin arasında kaçıncı sıradakine 
-// işlem yaptırmamız gerektiğini söylüyoruz.
+//eq() --> with the id,class,tag... whatever of the element specified here
+// rank among all the elements with the same value
+// we say we need to take action.
 $("b:eq(5)").css("background-color","red");
 
-// burada not() fonnksiyonu ile seçtiğimiz öğelerin içinden
-// class'ı middle_div olan paramatre dışındaki öğelere işlem yaptırmak için kullanılır.
+// here from the items we select with the not() function
+// It is used to process elements other than the parameter whose class is middle_div.
 $('div').not(".middle_div").css({"background-color":"blue"});
 
 
-// burada not() fonnksiyonu ile seçtiğimiz öğelerin içinden
-// class'ı middle_div olan paramatreye  işlem yaptırmak için kullanılır.
-// ama middle_div dışındaki öğelere bu işlemleri yaptırmaz.
+// here from the items we select with the not() function
+// It is used to process the parameter whose class is middle_div.
+// but it doesn't do these operations on elements other than middle_div.
 $('div').filter(".middle_div").css({"background-color":"yellow"});
 
 
-// is --> is simgesi if sorgularında class,id,tag... karşılaştırmak için
-// ve o var ise bunu yap şeklindeki sorgularda bizlere kolaylıklar sağlar.
+// is --> is symbol to compare class,id,tag... in if queries
+ //It provides convenience to us in queries such as and do this if it exists.
 if($("div").is('.middle_div')){
     $('#middle_i').text("that is true");
 }
