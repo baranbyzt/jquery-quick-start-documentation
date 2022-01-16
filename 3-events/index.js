@@ -141,4 +141,39 @@ Method on(), one or more for selected items
   function(){
     alert("Bye! You now leave p1!");
   });
+
+
+
+
+
+  
+// The event is dispatched to an item when the user presses a key on the keydown keyboard
+$(document).keydown(function (event) { 
+    
+
+// The status of pressing the "Alt" key is checked.
+  // here it works if the user presses the "Alt" key.
+  if(event.altKey){
+      console.log("alt key presseds")
+  }
+  
+  
+// The status of pressing the "Shift" key is checked.
+  // here it works if the user presses the "Shift" key.
+  else if(event.shiftKey){
+      console.log("shift key presseds")
+  }
+  
+  // The status of pressing the "ctrl" key is checked.
+  // here it works if the user presses the "ctrl" key.
+  else if(event.ctrlKey){
+      console.log("ctrl key presseds")
+  }
+  
+  });
+  
+  
+  
+
+  
 })
